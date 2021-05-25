@@ -1,0 +1,418 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F473FC992653B8B800ECB6FE /* PlaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F473FC982653B8B800ECB6FE /* PlaceViewController.m */; };
+		F473FC9D2654275500ECB6FE /* PlaceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F473FC9C2654275500ECB6FE /* PlaceTableViewCell.m */; };
+		F4B53215264E674300BECC56 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F4B53214264E674300BECC56 /* AppDelegate.m */; };
+		F4B53218264E674300BECC56 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F4B53217264E674300BECC56 /* SceneDelegate.m */; };
+		F4B5321B264E674300BECC56 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4B5321A264E674300BECC56 /* MainViewController.m */; };
+		F4B53220264E674400BECC56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4B5321F264E674400BECC56 /* Assets.xcassets */; };
+		F4B53226264E674400BECC56 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F4B53225264E674400BECC56 /* main.m */; };
+		F4B5322F264E886F00BECC56 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4B5322E264E886F00BECC56 /* TestViewController.m */; };
+		F4B53234264EC3D600BECC56 /* cities.json in Resources */ = {isa = PBXBuildFile; fileRef = F4B53231264EC3D600BECC56 /* cities.json */; };
+		F4B53235264EC3D600BECC56 /* countries.json in Resources */ = {isa = PBXBuildFile; fileRef = F4B53232264EC3D600BECC56 /* countries.json */; };
+		F4B53236264EC3D600BECC56 /* airports.json in Resources */ = {isa = PBXBuildFile; fileRef = F4B53233264EC3D600BECC56 /* airports.json */; };
+		F4B5323A264EC44600BECC56 /* Country.m in Sources */ = {isa = PBXBuildFile; fileRef = F4B53239264EC44600BECC56 /* Country.m */; };
+		F4B5323D264EC4BE00BECC56 /* City.m in Sources */ = {isa = PBXBuildFile; fileRef = F4B5323C264EC4BE00BECC56 /* City.m */; };
+		F4B53240264EC56300BECC56 /* Airport.m in Sources */ = {isa = PBXBuildFile; fileRef = F4B5323F264EC56300BECC56 /* Airport.m */; };
+		F4B53244264EC63D00BECC56 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F4B53243264EC63D00BECC56 /* DataManager.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F473FC972653B8B800ECB6FE /* PlaceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlaceViewController.h; sourceTree = "<group>"; };
+		F473FC982653B8B800ECB6FE /* PlaceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlaceViewController.m; sourceTree = "<group>"; };
+		F473FC9B2654275500ECB6FE /* PlaceTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlaceTableViewCell.h; sourceTree = "<group>"; };
+		F473FC9C2654275500ECB6FE /* PlaceTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlaceTableViewCell.m; sourceTree = "<group>"; };
+		F4B53210264E674300BECC56 /* AirTick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AirTick.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4B53213264E674300BECC56 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F4B53214264E674300BECC56 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F4B53216264E674300BECC56 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		F4B53217264E674300BECC56 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		F4B53219264E674300BECC56 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		F4B5321A264E674300BECC56 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		F4B5321F264E674400BECC56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F4B53224264E674400BECC56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F4B53225264E674400BECC56 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F4B5322D264E886F00BECC56 /* TestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		F4B5322E264E886F00BECC56 /* TestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		F4B53231264EC3D600BECC56 /* cities.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cities.json; sourceTree = "<group>"; };
+		F4B53232264EC3D600BECC56 /* countries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = countries.json; sourceTree = "<group>"; };
+		F4B53233264EC3D600BECC56 /* airports.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = airports.json; sourceTree = "<group>"; };
+		F4B53238264EC44600BECC56 /* Country.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Country.h; sourceTree = "<group>"; };
+		F4B53239264EC44600BECC56 /* Country.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Country.m; sourceTree = "<group>"; };
+		F4B5323B264EC4BE00BECC56 /* City.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = City.h; sourceTree = "<group>"; };
+		F4B5323C264EC4BE00BECC56 /* City.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = City.m; sourceTree = "<group>"; };
+		F4B5323E264EC56300BECC56 /* Airport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Airport.h; sourceTree = "<group>"; };
+		F4B5323F264EC56300BECC56 /* Airport.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Airport.m; sourceTree = "<group>"; };
+		F4B53242264EC63D00BECC56 /* DataManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
+		F4B53243264EC63D00BECC56 /* DataManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F4B5320D264E674300BECC56 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F473FC9A2654272200ECB6FE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F473FC9B2654275500ECB6FE /* PlaceTableViewCell.h */,
+				F473FC9C2654275500ECB6FE /* PlaceTableViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F4B53207264E674300BECC56 = {
+			isa = PBXGroup;
+			children = (
+				F4B53212264E674300BECC56 /* AirTick */,
+				F4B53211264E674300BECC56 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F4B53211264E674300BECC56 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F4B53210264E674300BECC56 /* AirTick.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F4B53212264E674300BECC56 /* AirTick */ = {
+			isa = PBXGroup;
+			children = (
+				F4B5322C264E881300BECC56 /* Controller */,
+				F4B53241264EC61F00BECC56 /* Data */,
+				F4B53230264EC39A00BECC56 /* JSON */,
+				F4B53237264EC3E400BECC56 /* Model */,
+				F473FC9A2654272200ECB6FE /* View */,
+				F4B53213264E674300BECC56 /* AppDelegate.h */,
+				F4B53214264E674300BECC56 /* AppDelegate.m */,
+				F4B53216264E674300BECC56 /* SceneDelegate.h */,
+				F4B53217264E674300BECC56 /* SceneDelegate.m */,
+				F4B5321F264E674400BECC56 /* Assets.xcassets */,
+				F4B53224264E674400BECC56 /* Info.plist */,
+				F4B53225264E674400BECC56 /* main.m */,
+			);
+			path = AirTick;
+			sourceTree = "<group>";
+		};
+		F4B5322C264E881300BECC56 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F4B53219264E674300BECC56 /* MainViewController.h */,
+				F4B5321A264E674300BECC56 /* MainViewController.m */,
+				F4B5322D264E886F00BECC56 /* TestViewController.h */,
+				F4B5322E264E886F00BECC56 /* TestViewController.m */,
+				F473FC972653B8B800ECB6FE /* PlaceViewController.h */,
+				F473FC982653B8B800ECB6FE /* PlaceViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F4B53230264EC39A00BECC56 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				F4B53233264EC3D600BECC56 /* airports.json */,
+				F4B53231264EC3D600BECC56 /* cities.json */,
+				F4B53232264EC3D600BECC56 /* countries.json */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
+		F4B53237264EC3E400BECC56 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F4B5323B264EC4BE00BECC56 /* City.h */,
+				F4B5323C264EC4BE00BECC56 /* City.m */,
+				F4B53238264EC44600BECC56 /* Country.h */,
+				F4B53239264EC44600BECC56 /* Country.m */,
+				F4B5323E264EC56300BECC56 /* Airport.h */,
+				F4B5323F264EC56300BECC56 /* Airport.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F4B53241264EC61F00BECC56 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				F4B53242264EC63D00BECC56 /* DataManager.h */,
+				F4B53243264EC63D00BECC56 /* DataManager.m */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F4B5320F264E674300BECC56 /* AirTick */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F4B53229264E674400BECC56 /* Build configuration list for PBXNativeTarget "AirTick" */;
+			buildPhases = (
+				F4B5320C264E674300BECC56 /* Sources */,
+				F4B5320D264E674300BECC56 /* Frameworks */,
+				F4B5320E264E674300BECC56 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AirTick;
+			productName = AirTick;
+			productReference = F4B53210264E674300BECC56 /* AirTick.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F4B53208264E674300BECC56 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					F4B5320F264E674300BECC56 = {
+						CreatedOnToolsVersion = 12.5;
+					};
+				};
+			};
+			buildConfigurationList = F4B5320B264E674300BECC56 /* Build configuration list for PBXProject "AirTick" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F4B53207264E674300BECC56;
+			productRefGroup = F4B53211264E674300BECC56 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F4B5320F264E674300BECC56 /* AirTick */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F4B5320E264E674300BECC56 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4B53235264EC3D600BECC56 /* countries.json in Resources */,
+				F4B53236264EC3D600BECC56 /* airports.json in Resources */,
+				F4B53234264EC3D600BECC56 /* cities.json in Resources */,
+				F4B53220264E674400BECC56 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F4B5320C264E674300BECC56 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4B5321B264E674300BECC56 /* MainViewController.m in Sources */,
+				F4B53215264E674300BECC56 /* AppDelegate.m in Sources */,
+				F473FC992653B8B800ECB6FE /* PlaceViewController.m in Sources */,
+				F4B53226264E674400BECC56 /* main.m in Sources */,
+				F4B53218264E674300BECC56 /* SceneDelegate.m in Sources */,
+				F473FC9D2654275500ECB6FE /* PlaceTableViewCell.m in Sources */,
+				F4B5323A264EC44600BECC56 /* Country.m in Sources */,
+				F4B53240264EC56300BECC56 /* Airport.m in Sources */,
+				F4B5323D264EC4BE00BECC56 /* City.m in Sources */,
+				F4B53244264EC63D00BECC56 /* DataManager.m in Sources */,
+				F4B5322F264E886F00BECC56 /* TestViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		F4B53227264E674400BECC56 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		F4B53228264E674400BECC56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F4B5322A264E674400BECC56 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YKX9VWS6ZS;
+				INFOPLIST_FILE = AirTick/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.grigorystolyarov.AirTick;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		F4B5322B264E674400BECC56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YKX9VWS6ZS;
+				INFOPLIST_FILE = AirTick/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.grigorystolyarov.AirTick;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F4B5320B264E674300BECC56 /* Build configuration list for PBXProject "AirTick" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4B53227264E674400BECC56 /* Debug */,
+				F4B53228264E674400BECC56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F4B53229264E674400BECC56 /* Build configuration list for PBXNativeTarget "AirTick" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4B5322A264E674400BECC56 /* Debug */,
+				F4B5322B264E674400BECC56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F4B53208264E674300BECC56 /* Project object */;
+}
