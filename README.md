@@ -1,2 +1,2 @@
 # AirTick
-An application for tickets searching in Objective-C
+An application for tickets' searching in Objective-C
