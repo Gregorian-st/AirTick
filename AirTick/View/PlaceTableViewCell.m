@@ -7,6 +7,10 @@
 
 #import "PlaceTableViewCell.h"
 
+@interface PlaceTableViewCell()
+
+@end
+
 @implementation PlaceTableViewCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {

@@ -6,9 +6,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PlaceViewController.h"
+#import "APIManager.h"
 
-@interface MainViewController : UIViewController<PlaceViewControllerDelegate>
+@interface MainViewController : UIViewController
 
 
 @end

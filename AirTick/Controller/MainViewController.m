@@ -7,14 +7,16 @@
 
 #import "MainViewController.h"
 #import "TestViewController.h"
-#import "DataManager.h"
 #import "PlaceViewController.h"
+#import "TicketsViewController.h"
 
-@interface MainViewController ()
+@interface MainViewController()<PlaceViewControllerDelegate>
 
+@property (nonatomic, strong) UIView *placeContainerView;
 @property (nonatomic, strong) UIButton *departureButton;
 @property (nonatomic, strong) UIButton *arrivalButton;
 @property (nonatomic) SearchRequest searchRequest;
+@property (nonatomic, strong) UIButton *searchButton;
 
 @end
 
@@ -32,6 +34,8 @@
 - (void)setupViewController {
     CGFloat spacingY = 20.0;
     CGFloat spacingX = 20.0;
+    CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
+    CGFloat nextY;
     
     self.view.backgroundColor = [UIColor systemBackgroundColor];
     self.navigationController.navigationBar.prefersLargeTitles = YES;
@@ -40,25 +44,48 @@
     
     CGFloat topHeight = self.navigationController.navigationBar.frame.size.height + [UIApplication sharedApplication].windows.lastObject.windowScene.statusBarManager.statusBarFrame.size.height;
     
+    _placeContainerView = [[UIView alloc] initWithFrame:CGRectMake(spacingX - 10, topHeight + spacingY / 2, screenWidth - (spacingX - 10) * 2, 160)];
+    _placeContainerView.backgroundColor = [UIColor systemBackgroundColor];
+    _placeContainerView.layer.shadowColor = [[[UIColor blackColor] colorWithAlphaComponent:0.2] CGColor];
+    _placeContainerView.layer.shadowOffset = CGSizeZero;
+    _placeContainerView.layer.shadowRadius = 10.0;
+    _placeContainerView.layer.shadowOpacity = 0.8;
+    _placeContainerView.layer.cornerRadius = 6.0;
+    _placeContainerView.layer.borderWidth = 1;
+    _placeContainerView.layer.borderColor = [[UIColor systemGray4Color] CGColor];
+    nextY = topHeight + spacingY / 2 + _placeContainerView.frame.size.height;
+    
     _departureButton = [UIButton buttonWithType:UIButtonTypeSystem];
     [_departureButton setTitle:@"Select Departure Point..." forState: UIControlStateNormal];
     _departureButton.tintColor = [UIColor whiteColor];
-    _departureButton.frame = CGRectMake(spacingX, topHeight + spacingY, [UIScreen mainScreen].bounds.size.width - spacingX * 2, 50.0);
+    _departureButton.frame = CGRectMake(spacingX - 10, spacingY, screenWidth - spacingX * 2, 50.0);
     _departureButton.backgroundColor = [UIColor systemBlueColor];
     _departureButton.layer.cornerRadius = _departureButton.frame.size.height / 2;
     [_departureButton.layer masksToBounds];
     [_departureButton addTarget:self action:@selector(placeButtonDidTap:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:_departureButton];
+    [self.placeContainerView addSubview:_departureButton];
     
     _arrivalButton = [UIButton buttonWithType:UIButtonTypeSystem];
     [_arrivalButton setTitle:@"Select Destination Point..." forState: UIControlStateNormal];
     _arrivalButton.tintColor = [UIColor whiteColor];
-    _arrivalButton.frame = CGRectMake(spacingX, CGRectGetMaxY(_departureButton.frame) + spacingY, [UIScreen mainScreen].bounds.size.width - spacingX * 2, 50.0);
+    _arrivalButton.frame = CGRectMake(spacingX - 10, CGRectGetMaxY(_departureButton.frame) + spacingY, screenWidth - spacingX * 2, 50.0);
     _arrivalButton.backgroundColor = [UIColor systemBlueColor];
     _arrivalButton.layer.cornerRadius = _arrivalButton.frame.size.height / 2;
     [_arrivalButton.layer masksToBounds];
     [_arrivalButton addTarget:self action:@selector(placeButtonDidTap:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:_arrivalButton];
+    [self.placeContainerView addSubview:_arrivalButton];
+    [self.view addSubview:_placeContainerView];
+    
+    _searchButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    [_searchButton setTitle:@"SEARCH" forState: UIControlStateNormal];
+    _searchButton.tintColor = [UIColor whiteColor];
+    _searchButton.frame = CGRectMake(spacingX, CGRectGetMaxY(_placeContainerView.frame) + spacingY + 10, screenWidth - spacingX * 2, 50.0);
+    _searchButton.backgroundColor = [UIColor systemGreenColor];
+    _searchButton.layer.cornerRadius = _searchButton.frame.size.height / 2;
+    [_searchButton.layer masksToBounds];
+    [_searchButton addTarget:self action:@selector(searchButtonDidTap:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:_searchButton];
+    
 }
 
 - (void)setupForTestViewController {
@@ -95,13 +122,28 @@
     [self.navigationController pushViewController: placeViewController animated:YES];
 }
 
+- (void)searchButtonDidTap:(UIButton *)sender {
+    [[APIManager sharedInstance] ticketsWithRequest:_searchRequest withCompletion:^(NSArray *tickets) {
+        if (tickets.count > 0) {
+            TicketsViewController *ticketsViewController = [[TicketsViewController alloc] initWithTickets:tickets];
+            [self.navigationController showViewController:ticketsViewController sender:self];
+        } else {
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Sorry!" message:@"There are no results for this search" preferredStyle: UIAlertControllerStyleAlert];
+            [alertController addAction:[UIAlertAction actionWithTitle:@"Close" style:(UIAlertActionStyleDefault) handler:nil]];
+            [self presentViewController:alertController animated:YES completion:nil];
+        }
+    }];
+}
+
 - (void)dealloc {
     // Unsubscribe from notifications
     [[NSNotificationCenter defaultCenter] removeObserver:self name:kDataManagerLoadDataDidComplete object:nil];
 }
 
 - (void)loadDataComplete {
-    NSLog(@"%@", NSStringFromSelector(_cmd));
+    [[APIManager sharedInstance] cityForCurrentIP:^(City *city) {
+        [self setPlace:city withDataType:DataSourceTypeCity andPlaceType:PlaceTypeDeparture forButton:self->_departureButton];
+    }];
 }
 
 // MARK: - PlaceViewControllerDelegate
@@ -129,7 +171,7 @@
         _searchRequest.origin = iata;
         prefixText = [NSMutableString stringWithString:@"From: "];
     } else {
-        _searchRequest.destionation = iata;
+        _searchRequest.destination = iata;
         prefixText = [NSMutableString stringWithString:@"To: "];
     }
     
