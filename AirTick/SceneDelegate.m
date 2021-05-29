@@ -7,6 +7,8 @@
 
 #import "SceneDelegate.h"
 #import "MainViewController.h"
+#import "MapViewController.h"
+#import "TabBarController.h"
 
 @interface SceneDelegate ()
 
@@ -22,12 +24,8 @@
     [self.window makeKeyAndVisible];
     
     // Create main ViewController
-    MainViewController *mainViewController = [[MainViewController alloc] init];
-    
-    // Create NavigationController
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:mainViewController];
-    self.window.rootViewController = navigationController;
-    [navigationController.navigationBar setLargeTitleTextAttributes: @{NSForegroundColorAttributeName:[UIColor systemBlueColor], NSFontAttributeName:[UIFont boldSystemFontOfSize:35.0]}];
+    TabBarController *tabBarController = [[TabBarController alloc] init];
+    self.window.rootViewController = tabBarController;
     
     // Create main WindowScene
     UIWindowScene *mainWindowScene = (UIWindowScene *) scene;

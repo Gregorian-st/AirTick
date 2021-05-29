@@ -91,4 +91,26 @@ NSString * SearchRequestQuery(SearchRequest request) {
     return result;
 }
 
+- (void)mapPricesFor:(City *)origin withCompletion:(void (^)(NSArray *prices))completion {
+    static BOOL isLoading;
+    if (isLoading) {
+        return;
+    }
+    isLoading = YES;
+    [self load:[NSString stringWithFormat:@"%@%@", API_URL_MAP_PRICE, origin.code] withCompletion:^(id _Nullable result) {
+        NSArray *array = result;
+        NSMutableArray *prices = [NSMutableArray new];
+        if (array) {
+            for (NSDictionary *mapPriceDictionary in array) {
+                MapPrice *mapPrice = [[MapPrice alloc] initWithDictionary:mapPriceDictionary withOrigin:origin];
+                [prices addObject:mapPrice];
+            }
+            isLoading = NO;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                completion(prices);
+            });
+        }
+    }];
+}
+
 @end

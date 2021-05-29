@@ -10,7 +10,7 @@
 #import "PlaceViewController.h"
 #import "TicketsViewController.h"
 
-@interface MainViewController()<PlaceViewControllerDelegate>
+@interface MainViewController () <PlaceViewControllerDelegate>
 
 @property (nonatomic, strong) UIView *placeContainerView;
 @property (nonatomic, strong) UIButton *departureButton;
@@ -39,6 +39,7 @@
     
     self.view.backgroundColor = [UIColor systemBackgroundColor];
     self.navigationController.navigationBar.prefersLargeTitles = YES;
+    [self.navigationController.navigationBar setLargeTitleTextAttributes: @{NSForegroundColorAttributeName:[UIColor systemBlueColor], NSFontAttributeName:[UIFont boldSystemFontOfSize:35.0]}];
     self.navigationItem.backButtonTitle = @"";
     self.title = @"Ticket Search";
     
@@ -57,7 +58,7 @@
     
     _departureButton = [UIButton buttonWithType:UIButtonTypeSystem];
     [_departureButton setTitle:@"Select Departure Point..." forState: UIControlStateNormal];
-    _departureButton.tintColor = [UIColor whiteColor];
+    _departureButton.tintColor = [UIColor blackColor];
     _departureButton.frame = CGRectMake(spacingX - 10, spacingY, screenWidth - spacingX * 2, 50.0);
     _departureButton.backgroundColor = [UIColor systemBlueColor];
     _departureButton.layer.cornerRadius = _departureButton.frame.size.height / 2;
@@ -67,7 +68,7 @@
     
     _arrivalButton = [UIButton buttonWithType:UIButtonTypeSystem];
     [_arrivalButton setTitle:@"Select Destination Point..." forState: UIControlStateNormal];
-    _arrivalButton.tintColor = [UIColor whiteColor];
+    _arrivalButton.tintColor = [UIColor blackColor];
     _arrivalButton.frame = CGRectMake(spacingX - 10, CGRectGetMaxY(_departureButton.frame) + spacingY, screenWidth - spacingX * 2, 50.0);
     _arrivalButton.backgroundColor = [UIColor systemBlueColor];
     _arrivalButton.layer.cornerRadius = _arrivalButton.frame.size.height / 2;
@@ -176,6 +177,7 @@
     }
     
     [button setTitle: [prefixText stringByAppendingString:title] forState: UIControlStateNormal];
+    button.tintColor = [UIColor whiteColor];
 }
 
 @end
