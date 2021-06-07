@@ -46,14 +46,12 @@
     CGFloat topHeight = self.navigationController.navigationBar.frame.size.height + [UIApplication sharedApplication].windows.lastObject.windowScene.statusBarManager.statusBarFrame.size.height;
     
     _placeContainerView = [[UIView alloc] initWithFrame:CGRectMake(spacingX - 10, topHeight + spacingY / 2, screenWidth - (spacingX - 10) * 2, 160)];
-    _placeContainerView.backgroundColor = [UIColor systemBackgroundColor];
+    _placeContainerView.backgroundColor = [UIColor colorNamed:@"ticketColor"];
     _placeContainerView.layer.shadowColor = [[[UIColor blackColor] colorWithAlphaComponent:0.2] CGColor];
     _placeContainerView.layer.shadowOffset = CGSizeZero;
     _placeContainerView.layer.shadowRadius = 10.0;
     _placeContainerView.layer.shadowOpacity = 0.8;
     _placeContainerView.layer.cornerRadius = 6.0;
-    _placeContainerView.layer.borderWidth = 1;
-    _placeContainerView.layer.borderColor = [[UIColor systemGray4Color] CGColor];
     nextY = topHeight + spacingY / 2 + _placeContainerView.frame.size.height;
     
     _departureButton = [UIButton buttonWithType:UIButtonTypeSystem];
@@ -86,7 +84,6 @@
     [_searchButton.layer masksToBounds];
     [_searchButton addTarget:self action:@selector(searchButtonDidTap:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_searchButton];
-    
 }
 
 - (void)setupForTestViewController {

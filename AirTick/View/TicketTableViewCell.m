@@ -22,14 +22,12 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     
     if (self) {
-        self.contentView.layer.shadowColor = [[[UIColor blackColor] colorWithAlphaComponent:0.05] CGColor];
+        self.contentView.layer.shadowColor = [[[UIColor blackColor] colorWithAlphaComponent:0.1] CGColor];
         self.contentView.layer.shadowOffset = CGSizeMake(1.0, 1.0);
         self.contentView.layer.shadowRadius = 10.0;
         self.contentView.layer.shadowOpacity = 0.8;
         self.contentView.layer.cornerRadius = 6.0;
-        self.contentView.layer.borderWidth = 1;
-        self.contentView.layer.borderColor = [[UIColor systemGray4Color] CGColor];
-        self.contentView.backgroundColor = [UIColor systemBackgroundColor];
+        self.contentView.backgroundColor = [UIColor colorNamed:@"ticketColor"];
         
         _priceLabel = [[UILabel alloc] initWithFrame:self.bounds];
         _priceLabel.font = [UIFont systemFontOfSize:24.0 weight:UIFontWeightBold];
@@ -92,6 +90,26 @@
             [_airlineLogoView setImageWithURL:urlLogo];
         }
     }    
+}
+
+- (void)setFavoriteTicket:(FavoriteTicket *)favoriteTicket {
+    _favoriteTicket = favoriteTicket;
+    _priceLabel.text = [NSString stringWithFormat:@"%lld руб.", favoriteTicket.price];
+    _placesLabel.text = [NSString stringWithFormat:@"%@ - %@", favoriteTicket.from, favoriteTicket.to];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateFormat = @"dd MMMM yyyy hh:mm";
+    _dateLabel.text = [dateFormatter stringFromDate:favoriteTicket.departure];
+    
+    NSURL *urlLogo;
+    @try {
+        urlLogo = [NSURL URLWithString:[NSString stringWithFormat:@"https://pics.avs.io/200/200/%@.png", favoriteTicket.airline]];
+    } @catch (NSException *exception) {
+        NSLog(@"%@", exception.reason);
+    } @finally {
+        if(urlLogo) {
+            [_airlineLogoView setImageWithURL:urlLogo];
+        }
+    }
 }
 
 @end

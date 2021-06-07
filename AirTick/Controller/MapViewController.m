@@ -31,8 +31,9 @@
 - (void)setupViewController {
     _mapView = [[MKMapView alloc] initWithFrame:self.view.bounds];
     _mapView.showsUserLocation = YES;
-    self.navigationController.navigationBar.prefersLargeTitles = NO;
-    [self.navigationController.navigationBar setTitleTextAttributes: @{NSForegroundColorAttributeName:[UIColor systemBlueColor], NSFontAttributeName:[UIFont boldSystemFontOfSize:16.0]}];
+    _mapView.delegate = self;
+    self.navigationController.navigationBar.prefersLargeTitles = YES;
+    [self.navigationController.navigationBar setLargeTitleTextAttributes: @{NSForegroundColorAttributeName:[UIColor systemBlueColor], NSFontAttributeName:[UIFont boldSystemFontOfSize:35.0]}];
     self.title = @"Price Map";
     [self.view addSubview:_mapView];
 }
@@ -70,6 +71,39 @@
             annotation.coordinate = price.destination.coordinate;
             [self->_mapView addAnnotation: annotation];
         });
+    }
+}
+
+- (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view {
+    MKPointAnnotation *selectedAnnotation;
+    selectedAnnotation = (MKPointAnnotation *)view.annotation;
+    for (MapPrice *price in self.prices) {
+        
+        if (selectedAnnotation.coordinate.latitude == price.destination.coordinate.latitude && selectedAnnotation.coordinate.longitude == price.destination.coordinate.longitude) {
+            
+            Ticket *ticket = [Ticket new];
+            ticket.departure = price.departure;
+            ticket.airline = price.airline;
+            ticket.from = price.origin.code;
+            ticket.to = price.destinationCode;
+            ticket.price = [NSNumber numberWithLong:price.value];
+            
+            BOOL isInFavorites = [[CoreDataService sharedInstance] isFavorite:ticket fromMap:YES];
+            if (isInFavorites) {
+                return;
+            }
+            
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Ticket" message:@"Please select action:" preferredStyle:UIAlertControllerStyleActionSheet];
+            UIAlertAction *favoriteAction;
+            favoriteAction = [UIAlertAction actionWithTitle:@"Add to Favorites" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                [[CoreDataService sharedInstance] addToFavorite:ticket fromMap:YES];
+            }];
+            UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
+            [alertController addAction:favoriteAction];
+            [alertController addAction:cancelAction];
+            [self presentViewController:alertController animated:YES completion:nil];
+        }
+        
     }
 }
 
