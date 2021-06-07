@@ -8,6 +8,7 @@
 #import <UIKit/UIKit.h>
 #import "APIManager.h"
 #import "LocationService.h"
+#import "CoreDataService.h"
 
 @interface MapViewController : UIViewController
 

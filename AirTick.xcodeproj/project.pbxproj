@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F44A99AD266D202400441CCF /* AirTickModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F44A99AB266D202400441CCF /* AirTickModel.xcdatamodeld */; };
+		F44A99B1266D233500441CCF /* CoreDataService.m in Sources */ = {isa = PBXBuildFile; fileRef = F44A99B0266D233500441CCF /* CoreDataService.m */; };
+		F44A99C4266D25F100441CCF /* FavoriteTicket+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = F44A99C0266D25F100441CCF /* FavoriteTicket+CoreDataClass.m */; };
+		F44A99C5266D25F100441CCF /* FavoriteTicket+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = F44A99C2266D25F100441CCF /* FavoriteTicket+CoreDataProperties.m */; };
+		F44A99C8266D2E1000441CCF /* FavoriteTicketsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F44A99C7266D2E1000441CCF /* FavoriteTicketsViewController.m */; };
 		F473FC992653B8B800ECB6FE /* PlaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F473FC982653B8B800ECB6FE /* PlaceViewController.m */; };
 		F473FC9D2654275500ECB6FE /* PlaceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F473FC9C2654275500ECB6FE /* PlaceTableViewCell.m */; };
 		F4B53215264E674300BECC56 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F4B53214264E674300BECC56 /* AppDelegate.m */; };
@@ -36,6 +41,15 @@
 /* Begin PBXFileReference section */
 		5803D8415C25ABD112EC2191 /* Pods-AirTick.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirTick.debug.xcconfig"; path = "Target Support Files/Pods-AirTick/Pods-AirTick.debug.xcconfig"; sourceTree = "<group>"; };
 		97C17CA0F8FF91E587F5DDD9 /* Pods_AirTick.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AirTick.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F44A99AC266D202400441CCF /* AirTickModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AirTickModel.xcdatamodel; sourceTree = "<group>"; };
+		F44A99AF266D233500441CCF /* CoreDataService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataService.h; sourceTree = "<group>"; };
+		F44A99B0266D233500441CCF /* CoreDataService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreDataService.m; sourceTree = "<group>"; };
+		F44A99C0266D25F100441CCF /* FavoriteTicket+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FavoriteTicket+CoreDataClass.m"; sourceTree = "<group>"; };
+		F44A99C1266D25F100441CCF /* FavoriteTicket+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FavoriteTicket+CoreDataProperties.h"; sourceTree = "<group>"; };
+		F44A99C2266D25F100441CCF /* FavoriteTicket+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FavoriteTicket+CoreDataProperties.m"; sourceTree = "<group>"; };
+		F44A99C3266D25F100441CCF /* FavoriteTicket+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FavoriteTicket+CoreDataClass.h"; sourceTree = "<group>"; };
+		F44A99C6266D2E1000441CCF /* FavoriteTicketsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FavoriteTicketsViewController.h; sourceTree = "<group>"; };
+		F44A99C7266D2E1000441CCF /* FavoriteTicketsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FavoriteTicketsViewController.m; sourceTree = "<group>"; };
 		F473FC972653B8B800ECB6FE /* PlaceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlaceViewController.h; sourceTree = "<group>"; };
 		F473FC982653B8B800ECB6FE /* PlaceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlaceViewController.m; sourceTree = "<group>"; };
 		F473FC9B2654275500ECB6FE /* PlaceTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlaceTableViewCell.h; sourceTree = "<group>"; };
@@ -111,6 +125,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F44A99AE266D21D600441CCF /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				F44A99C1266D25F100441CCF /* FavoriteTicket+CoreDataProperties.h */,
+				F44A99C3266D25F100441CCF /* FavoriteTicket+CoreDataClass.h */,
+				F44A99C0266D25F100441CCF /* FavoriteTicket+CoreDataClass.m */,
+				F44A99C2266D25F100441CCF /* FavoriteTicket+CoreDataProperties.m */,
+				F44A99AB266D202400441CCF /* AirTickModel.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		F473FC9A2654272200ECB6FE /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -174,6 +200,8 @@
 				F4B5322E264E886F00BECC56 /* TestViewController.m */,
 				F4E07995265FDC6100D8DC4C /* TicketsViewController.h */,
 				F4E07996265FDC6100D8DC4C /* TicketsViewController.m */,
+				F44A99C6266D2E1000441CCF /* FavoriteTicketsViewController.h */,
+				F44A99C7266D2E1000441CCF /* FavoriteTicketsViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -191,6 +219,7 @@
 		F4B53237264EC3E400BECC56 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F44A99AE266D21D600441CCF /* CoreData */,
 				F4B5323E264EC56300BECC56 /* Airport.h */,
 				F4B5323F264EC56300BECC56 /* Airport.m */,
 				F4B5323B264EC4BE00BECC56 /* City.h */,
@@ -222,6 +251,8 @@
 				F4E0798D265F8C3000D8DC4C /* APIManager.m */,
 				F4E079982660E8F400D8DC4C /* LocationService.h */,
 				F4E079992660E8F500D8DC4C /* LocationService.m */,
+				F44A99AF266D233500441CCF /* CoreDataService.h */,
+				F44A99B0266D233500441CCF /* CoreDataService.m */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -347,17 +378,22 @@
 				F4E079A02660EFF900D8DC4C /* MapViewController.m in Sources */,
 				F473FC992653B8B800ECB6FE /* PlaceViewController.m in Sources */,
 				F4B53226264E674400BECC56 /* main.m in Sources */,
+				F44A99C4266D25F100441CCF /* FavoriteTicket+CoreDataClass.m in Sources */,
+				F44A99C8266D2E1000441CCF /* FavoriteTicketsViewController.m in Sources */,
 				F4B53218264E674300BECC56 /* SceneDelegate.m in Sources */,
 				F4E07997265FDC6100D8DC4C /* TicketsViewController.m in Sources */,
 				F4E0799A2660E8F500D8DC4C /* LocationService.m in Sources */,
 				F473FC9D2654275500ECB6FE /* PlaceTableViewCell.m in Sources */,
 				F4E07991265FC4B600D8DC4C /* Ticket.m in Sources */,
 				F4B5323A264EC44600BECC56 /* Country.m in Sources */,
+				F44A99AD266D202400441CCF /* AirTickModel.xcdatamodeld in Sources */,
 				F4B53240264EC56300BECC56 /* Airport.m in Sources */,
 				F4E0798E265F8C3000D8DC4C /* APIManager.m in Sources */,
+				F44A99C5266D25F100441CCF /* FavoriteTicket+CoreDataProperties.m in Sources */,
 				F4B5323D264EC4BE00BECC56 /* City.m in Sources */,
 				F4B53244264EC63D00BECC56 /* DataManager.m in Sources */,
 				F4B5322F264E886F00BECC56 /* TestViewController.m in Sources */,
+				F44A99B1266D233500441CCF /* CoreDataService.m in Sources */,
 				F4E07994265FD10500D8DC4C /* TicketTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -539,6 +575,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F44A99AB266D202400441CCF /* AirTickModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F44A99AC266D202400441CCF /* AirTickModel.xcdatamodel */,
+			);
+			currentVersion = F44A99AC266D202400441CCF /* AirTickModel.xcdatamodel */;
+			path = AirTickModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = F4B53208264E674300BECC56 /* Project object */;
 }

@@ -14,6 +14,8 @@
 @property (strong, nonatomic) City *origin;
 @property (strong, nonatomic) NSDate *departure;
 @property (strong, nonatomic) NSDate *returnDate;
+@property (strong, nonatomic) NSString *airline;
+@property (strong, nonatomic) NSString *destinationCode;
 @property (nonatomic) NSInteger numberOfChanges;
 @property (nonatomic) NSInteger value;
 @property (nonatomic) NSInteger distance;

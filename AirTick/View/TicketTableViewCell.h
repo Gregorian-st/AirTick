@@ -8,9 +8,11 @@
 #import <UIKit/UIKit.h>
 #import "UIImageView+AFNetworking.h"
 #import "APIManager.h"
+#import "CoreDataService.h"
 
 @interface TicketTableViewCell : UITableViewCell
 
 @property (nonatomic, strong) Ticket *ticket;
+@property (nonatomic, strong) FavoriteTicket *favoriteTicket;
 
 @end

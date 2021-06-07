@@ -6,7 +6,6 @@
 //
 
 #import "TicketsViewController.h"
-#import "TicketTableViewCell.h"
 
 #define TicketCellReuseIdentifier @"TicketCellIdentifier"
 
@@ -42,6 +41,24 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 140.0;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    Ticket *ticket = [_tickets objectAtIndex:indexPath.row];
+    BOOL isInFavorites = [[CoreDataService sharedInstance] isFavorite:ticket fromMap:NO];
+    if (isInFavorites) {
+        return;
+    }
+    
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Ticket" message:@"Please select action:" preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertAction *favoriteAction;
+    favoriteAction = [UIAlertAction actionWithTitle:@"Add to Favorites" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [[CoreDataService sharedInstance] addToFavorite:ticket fromMap:NO];
+    }];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
+    [alertController addAction:favoriteAction];
+    [alertController addAction:cancelAction];
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 @end
