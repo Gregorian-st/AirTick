@@ -12,6 +12,7 @@
 		F44A99C4266D25F100441CCF /* FavoriteTicket+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = F44A99C0266D25F100441CCF /* FavoriteTicket+CoreDataClass.m */; };
 		F44A99C5266D25F100441CCF /* FavoriteTicket+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = F44A99C2266D25F100441CCF /* FavoriteTicket+CoreDataProperties.m */; };
 		F44A99C8266D2E1000441CCF /* FavoriteTicketsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F44A99C7266D2E1000441CCF /* FavoriteTicketsViewController.m */; };
+		F44A99CB266E740C00441CCF /* NotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = F44A99CA266E740C00441CCF /* NotificationCenter.m */; };
 		F473FC992653B8B800ECB6FE /* PlaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F473FC982653B8B800ECB6FE /* PlaceViewController.m */; };
 		F473FC9D2654275500ECB6FE /* PlaceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F473FC9C2654275500ECB6FE /* PlaceTableViewCell.m */; };
 		F4B53215264E674300BECC56 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F4B53214264E674300BECC56 /* AppDelegate.m */; };
@@ -50,6 +51,8 @@
 		F44A99C3266D25F100441CCF /* FavoriteTicket+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FavoriteTicket+CoreDataClass.h"; sourceTree = "<group>"; };
 		F44A99C6266D2E1000441CCF /* FavoriteTicketsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FavoriteTicketsViewController.h; sourceTree = "<group>"; };
 		F44A99C7266D2E1000441CCF /* FavoriteTicketsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FavoriteTicketsViewController.m; sourceTree = "<group>"; };
+		F44A99C9266E740C00441CCF /* NotificationCenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationCenter.h; sourceTree = "<group>"; };
+		F44A99CA266E740C00441CCF /* NotificationCenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationCenter.m; sourceTree = "<group>"; };
 		F473FC972653B8B800ECB6FE /* PlaceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlaceViewController.h; sourceTree = "<group>"; };
 		F473FC982653B8B800ECB6FE /* PlaceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlaceViewController.m; sourceTree = "<group>"; };
 		F473FC9B2654275500ECB6FE /* PlaceTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlaceTableViewCell.h; sourceTree = "<group>"; };
@@ -253,6 +256,8 @@
 				F4E079992660E8F500D8DC4C /* LocationService.m */,
 				F44A99AF266D233500441CCF /* CoreDataService.h */,
 				F44A99B0266D233500441CCF /* CoreDataService.m */,
+				F44A99C9266E740C00441CCF /* NotificationCenter.h */,
+				F44A99CA266E740C00441CCF /* NotificationCenter.m */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -382,6 +387,7 @@
 				F44A99C8266D2E1000441CCF /* FavoriteTicketsViewController.m in Sources */,
 				F4B53218264E674300BECC56 /* SceneDelegate.m in Sources */,
 				F4E07997265FDC6100D8DC4C /* TicketsViewController.m in Sources */,
+				F44A99CB266E740C00441CCF /* NotificationCenter.m in Sources */,
 				F4E0799A2660E8F500D8DC4C /* LocationService.m in Sources */,
 				F473FC9D2654275500ECB6FE /* PlaceTableViewCell.m in Sources */,
 				F4E07991265FC4B600D8DC4C /* Ticket.m in Sources */,

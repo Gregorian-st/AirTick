@@ -36,6 +36,18 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     TicketTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:TicketCellReuseIdentifier forIndexPath:indexPath];
     cell.ticket = [_tickets objectAtIndex:indexPath.row];
+    
+    cell.transform = CGAffineTransformMakeScale(0.4, 0.4);
+    cell.priceLabel.alpha = 0;
+    cell.placesLabel.alpha = 0;
+    cell.dateLabel.alpha = 0;
+    [UIView animateWithDuration:0.5 animations:^{
+        cell.transform = CGAffineTransformIdentity;
+        cell.priceLabel.alpha = 1;
+        cell.placesLabel.alpha = 1;
+        cell.dateLabel.alpha = 1;
+    }];
+    
     return cell;
 }
 

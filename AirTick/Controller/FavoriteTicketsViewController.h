@@ -7,6 +7,7 @@
 
 #import "TicketTableViewCell.h"
 #import "CoreDataService.h"
+#import "NotificationCenter.h"
 
 @interface FavoriteTicketsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
