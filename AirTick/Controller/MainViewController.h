@@ -7,6 +7,7 @@
 
 #import <UIKit/UIKit.h>
 #import "APIManager.h"
+#import "NotificationCenter.h"
 
 @interface MainViewController : UIViewController
 
