@@ -21,7 +21,7 @@
     self = [super init];
     if (self) {
         _tickets = tickets;
-        self.title = @"Tickets";
+        self.title = NSLocalizedStringWithDefaultValue(@"Tickets", @"TicketsViewController", NSBundle.mainBundle, @"Tickets", @"");
         self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         [self.tableView registerClass:[TicketTableViewCell class] forCellReuseIdentifier:TicketCellReuseIdentifier];
     }
@@ -62,12 +62,12 @@
         return;
     }
     
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Ticket" message:@"Please select action:" preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedStringWithDefaultValue(@"Ticket", @"TicketsViewController", NSBundle.mainBundle, @"Ticket", @"") message:NSLocalizedStringWithDefaultValue(@"Please select action:", @"TicketsViewController", NSBundle.mainBundle, @"Please select action:", @"") preferredStyle:UIAlertControllerStyleActionSheet];
     UIAlertAction *favoriteAction;
-    favoriteAction = [UIAlertAction actionWithTitle:@"Add to Favorites" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    favoriteAction = [UIAlertAction actionWithTitle:NSLocalizedStringWithDefaultValue(@"Add to Favorites", @"TicketsViewController", NSBundle.mainBundle, @"Add to Favorites", @"") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         [[CoreDataService sharedInstance] addToFavorite:ticket fromMap:NO];
     }];
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:NSLocalizedStringWithDefaultValue(@"Cancel", @"TicketsViewController", NSBundle.mainBundle, @"Cancel", @"") style:UIAlertActionStyleCancel handler:nil];
     [alertController addAction:favoriteAction];
     [alertController addAction:cancelAction];
     [self presentViewController:alertController animated:YES completion:nil];

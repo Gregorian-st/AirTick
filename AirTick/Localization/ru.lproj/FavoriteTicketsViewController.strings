@@ -1,0 +1,22 @@
+/* 
+  FavoriteTicketsViewController.strings
+  AirTick
+
+  Created by Grigory Stolyarov on 08.06.2021.
+  
+*/
+
+"Favorites" = "Избранное";
+"Price" = "Цена";
+"  Date" = "  Дата";
+"Search" = "Поиск";
+"Map" = "Карта";
+"Ticket reminder" = "Напоминание о билете";
+"Success" = "Успешно!";
+"Notification will be sent - %@" = "Напоминание будет отправлено - %@";
+"Close" = "Закрыть";
+"Ticket" = "Билет";
+"Please select action:" = "Выберите действие:";
+"Delete from Favorites" = "Удалить из Избранного";
+"Add a reminder" = "Добавить напоминание";
+"Cancel" = "Отмена";

@@ -59,7 +59,7 @@
     _tableView.tableHeaderView = _searchController.searchBar;
     [self.view addSubview:_tableView];
     
-    _segmentedControl = [[UISegmentedControl alloc] initWithItems:@[@"Cities", @"Airports"]];
+    _segmentedControl = [[UISegmentedControl alloc] initWithItems:@[NSLocalizedStringWithDefaultValue(@"Cities", @"PlaceViewController", NSBundle.mainBundle, @"Cities", @""), NSLocalizedStringWithDefaultValue(@"Airports", @"PlaceViewController", NSBundle.mainBundle, @"Airports", @"")]];
     [_segmentedControl addTarget:self action:@selector(changeSource) forControlEvents:UIControlEventValueChanged];
     _segmentedControl.tintColor = [UIColor systemBlueColor];
     self.navigationItem.titleView = _segmentedControl;
@@ -67,9 +67,9 @@
     [self changeSource];
     
     if (_placeType == PlaceTypeDeparture) {
-        self.title = @"From:";
+        self.title = NSLocalizedStringWithDefaultValue(@"From:", @"PlaceViewController", NSBundle.mainBundle, @"From:", @"");
     } else {
-        self.title = @"To:";
+        self.title = NSLocalizedStringWithDefaultValue(@"To:", @"PlaceViewController", NSBundle.mainBundle, @"To:", @"");
     }
 }
 

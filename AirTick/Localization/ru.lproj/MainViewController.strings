@@ -1,0 +1,17 @@
+/* 
+  MainViewController.strings
+  AirTick
+
+  Created by Grigory Stolyarov on 08.06.2021.
+  
+*/
+
+"Ticket Search" = "Поиск билетов";
+"Select Departure Point..." = "Выберите пункт вылета...";
+"Select Destination Point..." = "Выберите пункт назначения...";
+"SEARCH" = "НАЙТИ";
+"Sorry!" = "Ошибка!";
+"There are no results for this search" = "По данному напрвлению билетов нет";
+"Close" = "Закрыть";
+"From: " = "Откуда: ";
+"To: " = "Куда: ";

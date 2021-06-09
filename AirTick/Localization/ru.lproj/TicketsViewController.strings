@@ -1,0 +1,13 @@
+/* 
+  TicketsViewController.strings
+  AirTick
+
+  Created by Grigory Stolyarov on 08.06.2021.
+  
+*/
+
+"Tickets" = "Билеты";
+"Ticket" = "Билет";
+"Please select action:" = "Выберите действие:";
+"Add to Favorites" = "Добавить в Избранное";
+"Cancel" = "Отмена";

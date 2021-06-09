@@ -25,7 +25,6 @@
     [[DataManager sharedInstance] loadData];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadDataComplete) name:kDataManagerLoadDataDidComplete object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateCurrentLocation:) name:kLocationServiceDidUpdateCurrentLocation object:nil];
-    
 }
 
 - (void)setupViewController {
@@ -34,7 +33,7 @@
     _mapView.delegate = self;
     self.navigationController.navigationBar.prefersLargeTitles = YES;
     [self.navigationController.navigationBar setLargeTitleTextAttributes: @{NSForegroundColorAttributeName:[UIColor systemBlueColor], NSFontAttributeName:[UIFont boldSystemFontOfSize:35.0]}];
-    self.title = @"Price Map";
+    self.title = NSLocalizedStringWithDefaultValue(@"Price Map", @"MapViewController", NSBundle.mainBundle, @"Price Map", @"");
     [self.view addSubview:_mapView];
 }
 
@@ -78,7 +77,6 @@
     MKPointAnnotation *selectedAnnotation;
     selectedAnnotation = (MKPointAnnotation *)view.annotation;
     for (MapPrice *price in self.prices) {
-        
         if (selectedAnnotation.coordinate.latitude == price.destination.coordinate.latitude && selectedAnnotation.coordinate.longitude == price.destination.coordinate.longitude) {
             
             Ticket *ticket = [Ticket new];
@@ -93,17 +91,16 @@
                 return;
             }
             
-            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Ticket" message:@"Please select action:" preferredStyle:UIAlertControllerStyleActionSheet];
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedStringWithDefaultValue(@"Ticket", @"MapViewController", NSBundle.mainBundle, @"Ticket", @"") message:NSLocalizedStringWithDefaultValue(@"Please select action:", @"MapViewController", NSBundle.mainBundle, @"Please select action:", @"") preferredStyle:UIAlertControllerStyleActionSheet];
             UIAlertAction *favoriteAction;
-            favoriteAction = [UIAlertAction actionWithTitle:@"Add to Favorites" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            favoriteAction = [UIAlertAction actionWithTitle:NSLocalizedStringWithDefaultValue(@"Add to Favorites", @"MapViewController", NSBundle.mainBundle, @"Add to Favorites", @"") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                 [[CoreDataService sharedInstance] addToFavorite:ticket fromMap:YES];
             }];
-            UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
+            UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:NSLocalizedStringWithDefaultValue(@"Cancel", @"MapViewController", NSBundle.mainBundle, @"Cancel", @"") style:UIAlertActionStyleCancel handler:nil];
             [alertController addAction:favoriteAction];
             [alertController addAction:cancelAction];
             [self presentViewController:alertController animated:YES completion:nil];
         }
-        
     }
 }
 
