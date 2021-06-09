@@ -1,0 +1,11 @@
+/* 
+  File.strings
+  AirTick
+
+  Created by Grigory Stolyarov on 08.06.2021.
+  
+*/
+
+"Ticket Search" = "Поиск билетов";
+"Price Map" = "Карта цен";
+"Favorites" = "Избранное";

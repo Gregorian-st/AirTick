@@ -1,0 +1,11 @@
+/* 
+  LocationService.strings
+  AirTick
+
+  Created by Grigory Stolyarov on 08.06.2021.
+  
+*/
+
+"Sorry!" = "Внимание!";
+"The city of residence cannot be identified!" = "Невозможно определить местонахождение!";
+"Close" = "Закрыть";
