@@ -32,8 +32,8 @@
     if (manager.authorizationStatus == kCLAuthorizationStatusAuthorizedAlways || manager.authorizationStatus == kCLAuthorizationStatusAuthorizedWhenInUse) {
         [_locationManager startUpdatingLocation];
     } else if (manager.authorizationStatus != kCLAuthorizationStatusNotDetermined) {
-        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Sorry!" message:@"The city of residence cannot be identified!" preferredStyle: UIAlertControllerStyleAlert];
-        [alertController addAction:[UIAlertAction actionWithTitle:@"Close" style:(UIAlertActionStyleDefault) handler:nil]];
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedStringWithDefaultValue(@"Sorry!", @"LocationService", NSBundle.mainBundle, @"Sorry!", @"") message:NSLocalizedStringWithDefaultValue(@"The city of residence cannot be identified!", @"LocationService", NSBundle.mainBundle, @"The city of residence cannot be identified!", @"") preferredStyle: UIAlertControllerStyleAlert];
+        [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedStringWithDefaultValue(@"Close", @"LocationService", NSBundle.mainBundle, @"Close", @"") style:(UIAlertActionStyleDefault) handler:nil]];
         UIWindow * currentWindow = [[UIApplication sharedApplication] delegate].window;
         [currentWindow.rootViewController presentViewController:alertController animated:YES completion:nil];
     }

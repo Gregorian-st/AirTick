@@ -33,19 +33,19 @@
     NSMutableArray<UIViewController*> *controllers = [NSMutableArray new];
     
     MainViewController *mainViewController = [[MainViewController alloc] init];
-    mainViewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Ticket Search" image:[UIImage imageNamed:@"ticket_search"] tag:0];
+    mainViewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:NSLocalizedStringWithDefaultValue(@"Ticket Search", @"TabBarController", NSBundle.mainBundle, @"Ticket Search", @"") image:[UIImage imageNamed:@"ticket_search"] tag:0];
     UINavigationController *mainNavigationController = [[UINavigationController alloc] initWithRootViewController:mainViewController];
-    [mainNavigationController setTitle:@"Ticket Search"];
+    [mainNavigationController setTitle:NSLocalizedStringWithDefaultValue(@"Ticket Search", @"TabBarController", NSBundle.mainBundle, @"Ticket Search", @"")];
     [controllers addObject:mainNavigationController];
     
     MapViewController *mapViewController = [[MapViewController alloc] init];
-    mapViewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Price Map" image:[UIImage imageNamed:@"price_map"] tag:1];
+    mapViewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:NSLocalizedStringWithDefaultValue(@"Price Map", @"TabBarController", NSBundle.mainBundle, @"Price Map", @"") image:[UIImage imageNamed:@"price_map"] tag:1];
     UINavigationController *mapNavigationController = [[UINavigationController alloc] initWithRootViewController:mapViewController];
-    [mapNavigationController setTitle:@"Price Map"];
+    [mapNavigationController setTitle:NSLocalizedStringWithDefaultValue(@"Price Map", @"TabBarController", NSBundle.mainBundle, @"Price Map", @"")];
     [controllers addObject:mapNavigationController];
     
     FavoriteTicketsViewController *favoriteViewController = [[FavoriteTicketsViewController alloc] initFavoriteTicketsController];
-    favoriteViewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Favorites" image:[UIImage systemImageNamed:@"star"] tag:2];
+    favoriteViewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:NSLocalizedStringWithDefaultValue(@"Favorites", @"TabBarController", NSBundle.mainBundle, @"Favorites", @"") image:[UIImage systemImageNamed:@"star"] tag:2];
     UINavigationController *favoriteNavigationController = [[UINavigationController alloc] initWithRootViewController:favoriteViewController];
     [favoriteNavigationController setTitle:@"Favorites"];
     [controllers addObject:favoriteNavigationController];

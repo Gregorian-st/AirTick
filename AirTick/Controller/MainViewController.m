@@ -41,7 +41,7 @@
     self.navigationController.navigationBar.prefersLargeTitles = YES;
     [self.navigationController.navigationBar setLargeTitleTextAttributes: @{NSForegroundColorAttributeName:[UIColor systemBlueColor], NSFontAttributeName:[UIFont boldSystemFontOfSize:35.0]}];
     self.navigationItem.backButtonTitle = @"";
-    self.title = @"Ticket Search";
+    self.title = NSLocalizedStringWithDefaultValue(@"Ticket Search", @"MainViewController", NSBundle.mainBundle, @"Ticket Search", @"");
     
     CGFloat topHeight = self.navigationController.navigationBar.frame.size.height + [UIApplication sharedApplication].windows.lastObject.windowScene.statusBarManager.statusBarFrame.size.height;
     
@@ -55,7 +55,7 @@
     nextY = topHeight + spacingY / 2 + _placeContainerView.frame.size.height;
     
     _departureButton = [UIButton buttonWithType:UIButtonTypeSystem];
-    [_departureButton setTitle:@"Select Departure Point..." forState: UIControlStateNormal];
+    [_departureButton setTitle:NSLocalizedStringWithDefaultValue(@"Select Departure Point...", @"MainViewController", NSBundle.mainBundle, @"Select Departure Point...", @"") forState: UIControlStateNormal];
     _departureButton.tintColor = [UIColor blackColor];
     _departureButton.frame = CGRectMake(spacingX - 10, spacingY, screenWidth - spacingX * 2, 50.0);
     _departureButton.backgroundColor = [UIColor systemBlueColor];
@@ -65,7 +65,7 @@
     [self.placeContainerView addSubview:_departureButton];
     
     _arrivalButton = [UIButton buttonWithType:UIButtonTypeSystem];
-    [_arrivalButton setTitle:@"Select Destination Point..." forState: UIControlStateNormal];
+    [_arrivalButton setTitle:NSLocalizedStringWithDefaultValue(@"Select Destination Point...", @"MainViewController", NSBundle.mainBundle, @"Select Destination Point...", @"") forState: UIControlStateNormal];
     _arrivalButton.tintColor = [UIColor blackColor];
     _arrivalButton.frame = CGRectMake(spacingX - 10, CGRectGetMaxY(_departureButton.frame) + spacingY, screenWidth - spacingX * 2, 50.0);
     _arrivalButton.backgroundColor = [UIColor systemBlueColor];
@@ -76,7 +76,7 @@
     [self.view addSubview:_placeContainerView];
     
     _searchButton = [UIButton buttonWithType:UIButtonTypeSystem];
-    [_searchButton setTitle:@"SEARCH" forState: UIControlStateNormal];
+    [_searchButton setTitle:NSLocalizedStringWithDefaultValue(@"SEARCH", @"MainViewController", NSBundle.mainBundle, @"SEARCH", @"") forState: UIControlStateNormal];
     _searchButton.tintColor = [UIColor whiteColor];
     _searchButton.frame = CGRectMake(spacingX, CGRectGetMaxY(_placeContainerView.frame) + spacingY + 10, screenWidth - spacingX * 2, 50.0);
     _searchButton.backgroundColor = [UIColor systemGreenColor];
@@ -126,8 +126,8 @@
             TicketsViewController *ticketsViewController = [[TicketsViewController alloc] initWithTickets:tickets];
             [self.navigationController showViewController:ticketsViewController sender:self];
         } else {
-            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Sorry!" message:@"There are no results for this search" preferredStyle: UIAlertControllerStyleAlert];
-            [alertController addAction:[UIAlertAction actionWithTitle:@"Close" style:(UIAlertActionStyleDefault) handler:nil]];
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedStringWithDefaultValue(@"Sorry!", @"MainViewController", NSBundle.mainBundle, @"Sorry!", @"") message:NSLocalizedStringWithDefaultValue(@"There are no results for this search", @"MainViewController", NSBundle.mainBundle, @"There are no results for this search", @"") preferredStyle: UIAlertControllerStyleAlert];
+            [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedStringWithDefaultValue(@"Close", @"MainViewController", NSBundle.mainBundle, @"Close", @"") style:(UIAlertActionStyleDefault) handler:nil]];
             [self presentViewController:alertController animated:YES completion:nil];
         }
     }];
@@ -167,10 +167,10 @@
     NSMutableString *prefixText;
     if (placeType == PlaceTypeDeparture) {
         _searchRequest.origin = iata;
-        prefixText = [NSMutableString stringWithString:@"From: "];
+        prefixText = [NSMutableString stringWithString:NSLocalizedStringWithDefaultValue(@"From: ", @"MainViewController", NSBundle.mainBundle, @"From: ", @"")];
     } else {
         _searchRequest.destination = iata;
-        prefixText = [NSMutableString stringWithString:@"To: "];
+        prefixText = [NSMutableString stringWithString:NSLocalizedStringWithDefaultValue(@"To: ", @"MainViewController", NSBundle.mainBundle, @"To: ", @"")];
     }
     
     [button setTitle: [prefixText stringByAppendingString:title] forState: UIControlStateNormal];

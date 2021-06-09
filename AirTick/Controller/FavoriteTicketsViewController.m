@@ -57,10 +57,10 @@
     self.view.backgroundColor = [UIColor systemBackgroundColor];
     self.navigationController.navigationBar.prefersLargeTitles = YES;
     [self.navigationController.navigationBar setLargeTitleTextAttributes: @{NSForegroundColorAttributeName:[UIColor systemBlueColor], NSFontAttributeName:[UIFont boldSystemFontOfSize:35.0]}];
-    self.title = @"Favorites";
+    self.title = NSLocalizedStringWithDefaultValue(@"Favorites", @"FavoriteTicketsViewController", NSBundle.mainBundle, @"Favorites", @"");
     
-    _sortPriceButton = [[UIBarButtonItem alloc] initWithTitle:@"Price" style:UIBarButtonItemStylePlain target:self action:@selector(sortPriceButtonTapped:)];
-    _sortDateButton = [[UIBarButtonItem alloc] initWithTitle:@"  Date" style:UIBarButtonItemStylePlain target:self action:@selector(sortDateButtonTapped:)];
+    _sortPriceButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedStringWithDefaultValue(@"Price", @"FavoriteTicketsViewController", NSBundle.mainBundle, @"Price", @"") style:UIBarButtonItemStylePlain target:self action:@selector(sortPriceButtonTapped:)];
+    _sortDateButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedStringWithDefaultValue(@"  Date", @"FavoriteTicketsViewController", NSBundle.mainBundle, @"  Date", @"") style:UIBarButtonItemStylePlain target:self action:@selector(sortDateButtonTapped:)];
     self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects: _sortPriceButton, _sortDateButton, nil];
     
     _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
@@ -70,7 +70,7 @@
     [self.tableView registerClass:[TicketTableViewCell class] forCellReuseIdentifier:TicketCellReuseIdentifier];
     [self.view addSubview:_tableView];
     
-    _segmentedControl = [[UISegmentedControl alloc] initWithItems:@[@"Search", @"Map"]];
+    _segmentedControl = [[UISegmentedControl alloc] initWithItems:@[NSLocalizedStringWithDefaultValue(@"Search", @"FavoriteTicketsViewController", NSBundle.mainBundle, @"Search", @""), NSLocalizedStringWithDefaultValue(@"Map", @"FavoriteTicketsViewController", NSBundle.mainBundle, @"Map", @"")]];
     [_segmentedControl addTarget:self action:@selector(changeSource) forControlEvents:UIControlEventValueChanged];
     _segmentedControl.tintColor = [UIColor systemBlueColor];
     self.navigationItem.titleView = _segmentedControl;
@@ -142,10 +142,10 @@
                 [pngData writeToFile:path atomically:YES];
             } imageURL = [NSURL fileURLWithPath:path];
         }
-        Notification notification = NotificationMake(@"Ticket reminder", message, _datePicker.date, imageURL, notificationCell.favoriteTicket);
+        Notification notification = NotificationMake(NSLocalizedStringWithDefaultValue(@"Ticket reminder", @"FavoriteTicketsViewController", NSBundle.mainBundle, @"Ticket reminder", @""), message, _datePicker.date, imageURL, notificationCell.favoriteTicket);
         [[NotificationCenter sharedInstance] sendNotification:notification];
-        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Success" message:[NSString stringWithFormat:@"Notification will be sent - %@", _datePicker.date] preferredStyle:(UIAlertControllerStyleAlert)];
-        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Close" style:UIAlertActionStyleCancel handler:nil];
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedStringWithDefaultValue(@"Success", @"FavoriteTicketsViewController", NSBundle.mainBundle, @"Success", @"") message:[NSString stringWithFormat:NSLocalizedStringWithDefaultValue(@"Notification will be sent - %@", @"FavoriteTicketsViewController", NSBundle.mainBundle, @"Notification will be sent - %@", @""), _datePicker.date] preferredStyle:(UIAlertControllerStyleAlert)];
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:NSLocalizedStringWithDefaultValue(@"Close", @"FavoriteTicketsViewController", NSBundle.mainBundle, @"Close", @"") style:UIAlertActionStyleCancel handler:nil];
         [alertController addAction:cancelAction];
         
         _datePicker.date = [NSDate date];
@@ -202,21 +202,21 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     BOOL fromMap = _segmentedControl.selectedSegmentIndex;
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Ticket" message:@"Please select action:" preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedStringWithDefaultValue(@"Ticket", @"FavoriteTicketsViewController", NSBundle.mainBundle, @"Ticket", @"") message:NSLocalizedStringWithDefaultValue(@"Please select action:", @"FavoriteTicketsViewController", NSBundle.mainBundle, @"Please select action:", @"") preferredStyle:UIAlertControllerStyleActionSheet];
     
     UIAlertAction *favoriteAction;
-    favoriteAction = [UIAlertAction actionWithTitle:@"Delete from Favorites" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+    favoriteAction = [UIAlertAction actionWithTitle:NSLocalizedStringWithDefaultValue(@"Delete from Favorites", @"FavoriteTicketsViewController", NSBundle.mainBundle, @"Delete from Favorites", @"") style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
         [[CoreDataService sharedInstance] removeFromFavorite:[self->_tickets objectAtIndex:indexPath.row] fromMap:fromMap];
         [self changeSource];
         [self.tableView reloadData];
     }];
     
-    UIAlertAction *notificationAction = [UIAlertAction actionWithTitle:@"Add a reminder" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+    UIAlertAction *notificationAction = [UIAlertAction actionWithTitle:NSLocalizedStringWithDefaultValue(@"Add a reminder", @"FavoriteTicketsViewController", NSBundle.mainBundle, @"Add a reminder", @"") style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
         self->notificationCell = [tableView cellForRowAtIndexPath:indexPath];
         [self->_dateTextField becomeFirstResponder];
     }];
     
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:NSLocalizedStringWithDefaultValue(@"Cancel", @"FavoriteTicketsViewController", NSBundle.mainBundle, @"Cancel", @"") style:UIAlertActionStyleCancel handler:nil];
     
     [alertController addAction:favoriteAction];
     [alertController addAction:notificationAction];
